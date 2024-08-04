@@ -1,0 +1,30 @@
+{
+    "debugger": {
+        "enabled": true,
+        "click": "right"
+    },
+    "stylesManager": {
+        "defaultTheme": "Light",
+        "saveThemeLocally": false,
+        "useBrowserTheme": false
+    },
+    "logger": {
+        "enabled": false,
+        "showLogs": {
+            "console": {
+                "error": true,
+                "warning": true,
+                "info": false
+            }
+        }
+    },
+    "translator": {
+        "enabled": false
+    },
+    "paths": {
+        "components": "../../../../Slice/Components",
+        "themes": "../../../../Slice/Themes",
+        "styles": "../../../../Slice/Styles",
+        "userComponents": "../../../../src/Components"
+    }
+}

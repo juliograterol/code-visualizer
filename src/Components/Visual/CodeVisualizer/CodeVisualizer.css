@@ -1,0 +1,23 @@
+.codevisualizer_container {
+  font-family: "Consolas", "Courier New", monospace;
+  padding: 10px;
+  border-radius: 10px;
+}
+/* 
+.monaco-editor {
+}
+.monaco-editor .margin,
+.monaco-editor .margin-view-overlays {
+  background-color: transparent !important;
+}
+
+.view-lines {
+  pointer-events: none;
+}
+.code_language {
+  display: flex;
+  margin-top: 10px;
+  slice-button {
+    width: 100%;
+  }
+} */
