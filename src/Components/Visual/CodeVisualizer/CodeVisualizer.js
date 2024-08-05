@@ -13,7 +13,6 @@ export default class CodeVisualizer extends HTMLElement {
 
   set value(value) {
     this._value = value;
-    this.init();
   }
 
   get value() {
