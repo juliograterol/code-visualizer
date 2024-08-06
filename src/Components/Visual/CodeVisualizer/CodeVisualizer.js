@@ -83,10 +83,14 @@ export default class CodeVisualizer extends HTMLElement {
           code += " ".repeat(indentLevel * indentSize);
           insideRule = true;
         } else if (c === "}") {
-          if (insideRule) {
-            indentLevel--;
-            code += `\n${" ".repeat(indentLevel * indentSize)}}`;
-            insideRule = false;
+          if (value[i - 1] === ";") {
+            code += "}";
+          } else {
+            if (insideRule) {
+              indentLevel--;
+              code += `\n${" ".repeat(indentLevel * indentSize)}}`;
+              insideRule = false;
+            }
           }
         } else if (c === ";") {
           code += `${c}\n${" ".repeat(indentLevel * indentSize)}`;

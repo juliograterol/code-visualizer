@@ -22,6 +22,10 @@ export default class Input extends HTMLElement {
     ];
   }
 
+  get() {
+    return this.$input;
+  }
+
   get placeholder() {
     return this._placeholder;
   }

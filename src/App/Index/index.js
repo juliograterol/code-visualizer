@@ -3,41 +3,73 @@ import Slice from "../../../Slice/Slice.js";
 const loading = await slice.build("Loading", {});
 loading.start();
 
-const input = await slice.build("Input", {
+//Here is the Javascript CodeVisualizer
+//■■■■■■■■■■■■  ■■■■■■■■■
+//■■■■■■■■■■■■ ■■■■■■■■■■
+//      ■■■    ■■■
+//      ■■■     ■■■■■■■■
+//■■■   ■■■           ■■■
+//■■■■■■■■■    ■■■■■■■■■■
+// ■■■■■■■     ■■■■■■■■■
+
+const jsContainer = document.querySelector(".js_container");
+const jsInput = await slice.build("Input", {
   value: `let hola = "hola mundo"`,
 });
-
-document.body.appendChild(input);
-
-const CodeVisualizer = await slice.build("CodeVisualizer", {
-  value: input.value,
+jsInput.addEventListener("input", () => {
+  jsCodeVisualizer.value = jsInput.value;
+  jsCodeVisualizer.visualizeCode();
+});
+const jsCodeVisualizer = await slice.build("CodeVisualizer", {
+  value: jsInput.value,
   language: "javascript",
 });
-const button = await slice.build("Button", {
-  value: "Try it!",
-  onClickCallback: () => {
-    CodeVisualizer.value = input.value;
-    CodeVisualizer.visualizeCode;
-  },
-});
+jsContainer.appendChild(jsInput);
+jsContainer.appendChild(jsCodeVisualizer);
 
+//Here is the CSS CodeVisualizer
+// ■■■■■■■■■■   ■■■■■■■■■   ■■■■■■■■■
+//■■■■■■■■■■■  ■■■■■■■■■■  ■■■■■■■■■■
+//■■■          ■■■         ■■■
+//■■■           ■■■■■■■■    ■■■■■■■■
+//■■■                 ■■■         ■■■
+//■■■■■■■■■■■  ■■■■■■■■■■  ■■■■■■■■■■
+// ■■■■■■■■■■  ■■■■■■■■■   ■■■■■■■■■
+const cssContainer = document.querySelector(".css_container");
+const cssInput = await slice.build("Input", {
+  value: `.class{ color: blue;}`,
+});
 const cssCodeVisualizer = await slice.build("CodeVisualizer", {
-  value: `.codevisualizer_container {font-family: "Consolas", "Courier New", monospace;padding: 10px;border-radius: 10px;}`,
+  value: cssInput.value,
   language: "css",
 });
+cssInput.addEventListener("input", () => {
+  cssCodeVisualizer.value = cssInput.value;
+  cssCodeVisualizer.visualizeCode();
+});
+cssContainer.appendChild(cssInput);
+cssContainer.appendChild(cssCodeVisualizer);
+
+//Here is the HTML CodeVisualizer
+//■■■   ■■■ ■■■■■■■■■■■ ■■■      ■■■ ■■■
+//■■■   ■■■ ■■■■■■■■■■■ ■■■■    ■■■■ ■■■
+//■■■■■■■■■     ■■■     ■■■■■  ■■■■■ ■■■
+//■■■■■■■■■     ■■■     ■■■ ■■■■ ■■■ ■■■
+//■■■   ■■■     ■■■     ■■■  ■■  ■■■ ■■■■■■■■■■■
+//■■■   ■■■     ■■■     ■■■      ■■■ ■■■■■■■■■■■
+const htmlContainer = document.querySelector(".html_container");
+const htmlInput = await slice.build("Input", {
+  value: "<div></div>",
+});
 const htmlCodeVisualizer = await slice.build("CodeVisualizer", {
-  value: `<div class="codevisualizer_container">
-  <pre class="codevisualizer"><code></code></pre>
-</div>
-`,
+  value: htmlInput.value,
   language: "html",
 });
-
-CodeVisualizer.visualizeCode();
-
-document.body.appendChild(CodeVisualizer);
-document.body.appendChild(button);
-document.body.appendChild(cssCodeVisualizer);
-document.body.appendChild(htmlCodeVisualizer);
+htmlInput.addEventListener("input", () => {
+  htmlCodeVisualizer.value = htmlInput.value;
+  htmlCodeVisualizer.visualizeCode();
+});
+htmlContainer.appendChild(htmlInput);
+htmlContainer.appendChild(htmlCodeVisualizer);
 
 loading.stop();
