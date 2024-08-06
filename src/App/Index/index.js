@@ -14,7 +14,7 @@ loading.start();
 
 const jsContainer = document.querySelector(".js_container");
 const jsInput = await slice.build("Input", {
-  value: `let hola = "hola mundo"`,
+  value: `console.log("hello world");`,
 });
 jsInput.addEventListener("input", () => {
   jsCodeVisualizer.value = jsInput.value;
@@ -59,7 +59,7 @@ cssContainer.appendChild(cssCodeVisualizer);
 //■■■   ■■■     ■■■     ■■■      ■■■ ■■■■■■■■■■■
 const htmlContainer = document.querySelector(".html_container");
 const htmlInput = await slice.build("Input", {
-  value: "<div></div>",
+  value: `<!DOCTYPE html><html lang="en"><head></head><body></body></html>`,
 });
 const htmlCodeVisualizer = await slice.build("CodeVisualizer", {
   value: htmlInput.value,

@@ -1,14 +1,12 @@
 .codevisualizer_container {
-  /* font-family: "Consolas", "Courier New", monospace; */
+  max-width: 100%;
+  background-color: whitesmoke;
+  border: 1px solid var(--primary-color);
   padding: 10px;
   border-radius: 10px;
+  overflow-x: scroll;
 }
 
-.js_code {
+.codevisualizer {
+  border-radius: 10px;
 }
-/* 
-.html_code {
-}
-
-.css_code {
-} */
